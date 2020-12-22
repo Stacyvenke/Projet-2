@@ -1,0 +1,46 @@
+/* Police personnalisés */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+/* Elements principaux de la page */
+
+body
+{
+    font-family: 'Raleway', sans-serif;
+    color: black;
+}
+
+a
+{
+    text-decoration: none;
+    color: black;
+}
+
+/* Header */
+
+#logo
+{
+    width: 100px;
+}
+
+.nav-desktop
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav a 
+{
+    color: #0065fc;
+}
+
+/* Body */
+
+h1
+{
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
