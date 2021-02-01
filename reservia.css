@@ -1,46 +1,733 @@
-/* Police personnalisés */
-
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
 /* Elements principaux de la page */
 
-body
-{
-    font-family: 'Raleway', sans-serif;
-    color: black;
+:root {
+  --gris1: #F2F2F2;
+  --gris2: #D9D9D9;
+  --bleu1: #deebff;
 }
 
-a
-{
-    text-decoration: none;
-    color: black;
+body {
+  font-family: "Raleway", sans-serif;
+  color: black;
+  margin: 0;
+  width: 100%;
+  max-width: 1280px;
+  /* margin: auto; */
+  /*   border: 1px solid green; */
 }
 
-/* Header */
-
-#logo
-{
-    width: 100px;
+body > * {
+    width :95%;
+    margin:auto;
+    /* max-width: 1440px; */
 }
 
-.nav-desktop
-{
-    display: flex;
-    justify-content: flex-end;
+h1 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  width: 95%;
 }
 
-nav a 
-{
+h2 {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 15px;
+  margin-bottom: -10px;
+  margin-top: 1px;
+  margin-left: 10px;
+}
+
+p {
+  font-size: 15px;
+  margin-bottom: 5px;
+  width: 90%;
+  margin-left: 10px;
+}
+
+img {
+  width: calc(350px - 6px);
+  height: 150px;
+  object-fit: cover;
+  border: solid 3px white;
+  border-radius: 1rem 1rem 0 0;
+/*   margin: 3px; */
+}
+
+
+/* HEADER */
+header {
+    width: 100%;
+}
+
+
+#logo {
+  background-image: url("../images/logo/Reservia@3x.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: 5px;
+  grid-area: logo;
+}
+
+nav {
+  grid-template-columns: 50% 50%;
+  display: grid;
+  grid-template-areas:
+    "logo inscrire"
+    "hebergements activites";
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+nav a {
+  display: flex;
+  /* width: 50%; */
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  color: #0065fc;
+}
+
+a#register {
+  font-weight: bold;
+  order: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  grid-area: inscrire;
+}
+
+a#rooms {
+  grid-area: hebergements;
+}
+
+a#activities {
+  order: 4;
+  color: black;
+  grid-area: activites;
+}
+
+a#rooms {
+  border-bottom: 2px solid #0065fc;
+}
+
+a#activities {
+  border-bottom: 2px solid lightgrey;
+}
+
+a#rooms:hover,
+a#activities:hover {
+  border-bottom: 1px solid #0065fc;
+}
+
+
+/* SECTION SEARCH */
+
+div#search {
+  padding-top: 15px;
+}
+
+input.champ {
+  padding: 6px;
+  padding-top: 7px;
+  margin: -4px;
+  border: solid 1px #deebff;
+}
+
+.fa-map-marker-alt::before {
+  content: "\f3c5";
+  border: solid 1px #deebff;
+  border-radius: 10px 0px 0px 10px;
+  padding: 5px;
+  padding-bottom: 7px;
+  background-color: #f2f2f2;
+}
+
+button.button {
+  width: 2rem;
+  height: 1.9rem;
+  background-color: #0065fc;
+  border: solid 1px #0065fc;
+  border-radius: 10px;
+  margin: -4px;
+}
+
+button.button::after {
+  content: "\f002";
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  color: white;
+}
+
+@media screen AND (min-width: 768px) {
+  button.button::after {
+    content: "Rechercher";
+    font-family: "Raleway";
+  }
+
+  button.button {
+    width: 5rem;
     color: #0065fc;
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+  }
 }
 
-/* Body */
 
-h1
-{
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+/* SECTION FILTRES */
+
+div#Filtres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  font-weight: bold;
+  padding-bottom: 20px;
+  align-items: center;
+  padding-top: 15px;
+}
+  
+
+#Filtres h2 {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
+#Filtres div {
+  margin: 0 0.5rem 0.5rem 0;
+  border: 2px solid #f2f2f2;
+  border-radius: 25px;
+  padding-right: 20px;
+}
+
+#Filtres div::before {
+  font-family: "Font Awesome 5 Free";
+  color: #0065fc;
+  background-color: #deebff;
+  border-radius: 50%;
+  margin-left: -0.3rem;
+  margin-right: 0.5rem;
+  display: inline-flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.eco::before {
+  content: "\f53a";
+}
+
+.family::before {
+  content: "\f1ae";
+}
+
+.romantic::before {
+  content: "\f004";
+}
+
+.animals::before {
+  content: "\f6d3";
+}
+
+
+/* SECTION INFO */
+
+i.fas.fa-info {
+  color: #0065fc;
+  border: solid 1.5px #f2f2f2;
+  border-radius: 50%;
+  padding: 6px;
+  margin: 5px;
+  margin-right: 10px;
+  width: 1.6rem;
+  display: inline-flex;
+  justify-content: center;
+}
+
+
+/* MAIN */
+
+main {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+}
+
+
+.star {
+  margin-left: 10px;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: bold;
+}
+
+.fourStars::before {
+  content: "\f005 \f005 \f005 \f005";
+  color: #0065fc;
+}
+
+.fourStars::after {
+  content: "\f005";
+  color: #d9d9d9;
+}
+
+.fiveStars::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: #0065fc;
+}
+
+.threeStars::before {
+  content: "\f005 \f005 \f005";
+  color: #0065fc;
+}
+
+.threeStars::after {
+  content: "\f005 \f005";
+  color: #D9D9D9;
+}
+
+article {
+  box-shadow: 0px 0px 10px lightgrey;
+  border-radius: 1rem;
+  margin-bottom: 20px;
+  background-color: white;
+  width: 90%;
+}
+
+
+/* SECTION ROOMS */
+
+section.rooms {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rooms article {
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rooms img {
+  max-width: 100%;
+}
+
+.rooms h3,
+.rooms p,
+.rooms div {
+  width: 100%;
+}
+
+h3.Afficher {
+    margin-bottom: 25px;
+}
+
+
+
+/* SECTION POPULAR */
+
+section.popular {
+  background-color: #f2f2f2;
+  padding-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.popular article {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto auto auto;
+}
+
+.popular * {
+  align-self: center;
+}
+
+.popular h1:after {
+  content: "\f201";
+  font-family: 'Font Awesome 5 Free';
+}
+
+.popular h1 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  width: 90%;
+ }
+
+.popular img {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  width: 100%;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.popular .star {
+  grid-column-start: 2;
+}
+
+
+/* SECTION ACTIVITIES */
+
+section.Activities {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.Activities article {
+  padding-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Activities img {
+  width: 100%;
+  margin-top: auto;
+}
+
+.Activities h3 {
+  width: 100%;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  height: 3rem;
+}
+
+
+/* FOOTER */
+
+footer {
+  margin-top: 50px;
+  background-color: var(--gris1);
+  padding-top: 40px;
+  padding-bottom: 25px;
+  width: 100%;
+  max-width: initial;
+}
+
+ul {
+  list-style: none;
+  padding-top: 20px;
+  margin-left: 10px;
+  width: fit-content;
+  /* border:1px solid; */
+}
+
+li {
+  margin-bottom: 10px;
+ }
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  /* border: 1px solid red; */
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen AND (min-width: 768px) {
+
+  .rooms img {
+    width: 100%;
+    height: 290px;
+    object-position: center;
+    margin: 0;
+    max-width: calc(100% - 6px);
+  }
+
+  .Activities img {
+  width: 100%;
+  margin: auto;
+  height: 250px;
+  object-position: center;
+  }
+}
+
+@media screen AND (min-width: 1024px) {
+
+  body >* {
+    width: 99%
+  }
+
+  body {
+    /* width: 100%; */
+    margin: auto;
+  }
+
+  nav {
+    /* display: flex; */
+    grid-template-areas:
+      "logo hebergements activites inscrire";
+    grid-template-columns: 30% 20% 20% 20%;
+    grid-template-rows: 5rem;
+    grid-column-gap: 3%;
+  }
+  #Filtres h2 {
+    width:fit-content;
+    margin-right:1rem;
+    /* border:1px solid red; */
+  }
+
+  a#rooms {
+    /* order: 1; */
+    border-bottom: none;
+    /* width: 15%; */
+    border-top: solid 2px;
+    display: flex;
+    justify-content: center;
+  }
+
+  a#activities{
+    /* order: 2; */
+    border-bottom: none;
+    /* width: 15%; */
+  }
+
+  a#register {
+    /* order: 3; */
+    /* width: auto; */
+  }
+
+  main {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: initial;
+    max-width: 1024px;
+    margin: auto;
+    align-items: baseline;
+    padding-right: 1rem;
+    width: calc( 100% - 1rem);
+  }
+
+  .rooms {
+    display: flex;
+    justify-content: space-between;
+    padding-right : 1rem;
+  }
+
+  section.rooms {
+    background-color: #f2F2F2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 2rem;
+    width: 60%;
+    height: 50vw;
+  }
+
+  .rooms article {
+    width: 30%;
+    height: 30%;
+    display: flex;
+  }
+
+  .rooms img {
+    height: 55%;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rooms h1 {
+    padding-top: 1px
+  }
+
+  section.popular {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2rem;
+    margin-left: 20px;
+  }
+
+  .popular article {
+    width: 85%;
+    height: 116px;
+  }
+
+  .popular img {
+    height: 110px
+  }
+
+  .popular h1 {
+    margin-top: 10px;
+
+  }
+
+  section.Activities {
+    max-width: 1440px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-areas:
+        "titre titre titre titre"
+        "activite1 activite2 activite4 activite5"
+        "activite1 activite2 activite4 ."
+        "activite1 . activite4 activite6"
+        "activite1 activite3 activite4 activite6";
+    grid-template-columns: 22% 22% 22% 22%;
+    grid-template-rows: 3rem 9rem 3rem 3rem 9rem;
+    column-gap: 3%;
+  }
+
+  .activity1 {
+    grid-area: activite1;
+  }
+
+  .activity1 img, .activity4 img {
+     height: calc(100% - 3rem);
+  }
+
+  section.Activities article {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+  }
+
+  section.Activities img{
+      height: calc(100% - 3rem);
+  }
+
+  .Activities h1 {
+    grid-area: titre;
+    margin: 0;
+    padding: 0;
+  }
+
+  article.activity2 {
+    grid-area: activite2;
+  }
+
+  article.activity3 {
+    grid-area: activite3;
+  }
+
+  article.activity4 {
+    grid-area: activite4;
+  }
+
+  article.activity5 {
+    grid-area: activite5;
+  }
+
+  article.activity6 {
+    grid-area: activite6;
+  }
+
+ footer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+}
+
+
+@media screen AND (min-width: 1440px) {
+
+  body >* {
+      width: 99%;
+  }
+
+  nav a{
+      width: 100%;
+      font-size: 25px;        
+  }
+
+  a#logo {
+      height: 60px;
+  }
+
+  a#rooms {
+      width: 25%;
+  }
+
+  a#activities {
+      width: 25%;
+  }
+
+  a#register {
+      width: 25%;
+      display: flex;
+      justify-content: center;
+  }
+
+  body {
+      /* margin: 0; */
+      /* width: 100%; */
+  }
+
+  main {
+      max-width: 1440px;
+      margin: 0;
+
+  }
+
+  section.rooms {
+      width: 60%;
+  }
+
+  section.popular {
+      width: 40%;
+  }
+
+  .popular article {
+      width: 92%;
+      height: 165px;
+  }
+
+  .popular img {
+      height: 95%
+  }
+
+  .popular h1 {
+      margin-bottom: 50px;
+      margin-top: 15px;
+  }
+
+  h1 {
+      font-size: 30px;
+  }
+
+  h2 {
+      font-size: 25px;
+  }
+
+  h3 {
+      font-size: 20px;
+  }
+
+  p {
+      font-size: 20px;
+  }
+
+  footer {
+    width: 100%;
+  }
+}
