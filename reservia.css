@@ -14,14 +14,11 @@ body {
   margin: 0;
   width: 100%;
   max-width: 1280px;
-  /* margin: auto; */
-  /*   border: 1px solid green; */
 }
 
 body > * {
     width :95%;
     margin:auto;
-    /* max-width: 1440px; */
 }
 
 h1 {
@@ -59,15 +56,14 @@ img {
   object-fit: cover;
   border: solid 3px white;
   border-radius: 1rem 1rem 0 0;
-/*   margin: 3px; */
 }
 
 
 /* HEADER */
+
 header {
     width: 100%;
 }
-
 
 #logo {
   background-image: url("../images/logo/Reservia@3x.png");
@@ -94,7 +90,6 @@ a {
 
 nav a {
   display: flex;
-  /* width: 50%; */
   height: 50px;
   justify-content: center;
   align-items: center;
@@ -200,7 +195,6 @@ div#Filtres {
   padding-top: 15px;
 }
   
-
 #Filtres h2 {
   width: 100%;
   padding-top: 10px;
@@ -243,6 +237,11 @@ div#Filtres {
 
 .animals::before {
   content: "\f6d3";
+}
+
+#Filtres :hover {
+    color: blue;
+    cursor: pointer;
 }
 
 
@@ -340,7 +339,6 @@ h3.Afficher {
 }
 
 
-
 /* SECTION POPULAR */
 
 section.popular {
@@ -394,7 +392,6 @@ section.Activities {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
 }
 
 .Activities article {
@@ -433,7 +430,6 @@ ul {
   padding-top: 20px;
   margin-left: 10px;
   width: fit-content;
-  /* border:1px solid; */
 }
 
 li {
@@ -443,7 +439,6 @@ li {
 *{
   box-sizing: border-box;
   padding: 0;
-  /* border: 1px solid red; */
 }
 
 
@@ -474,43 +469,64 @@ li {
   }
 
   body {
-    /* width: 100%; */
     margin: auto;
+  }
+  
+  nav a {
+    display: flex;
+    justify-content: space-around;
   }
 
   nav {
-    /* display: flex; */
-    grid-template-areas:
-      "logo hebergements activites inscrire";
-    grid-template-columns: 30% 20% 20% 20%;
-    grid-template-rows: 5rem;
-    grid-column-gap: 3%;
+    display: flex;
+    justify-content: flex-end;
   }
-  #Filtres h2 {
-    width:fit-content;
-    margin-right:1rem;
-    /* border:1px solid red; */
+
+  a#logo {
+    order: 1;
+    width: 100%;
+    margin:auto;
   }
 
   a#rooms {
-    /* order: 1; */
+    order: 2;
+    width: 20%
+  }
+
+  a#activities {
+    order: 3;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+  }
+
+  a#register {
+    order: 4;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #Filtres h2 {
+    width:fit-content;
+    margin-right:1rem;
+  }
+
+  i.fas.fa-info {
+    width: 1.9rem;
+  }
+
+  a#rooms {
     border-bottom: none;
-    /* width: 15%; */
     border-top: solid 2px;
     display: flex;
     justify-content: center;
   }
 
   a#activities{
-    /* order: 2; */
     border-bottom: none;
-    /* width: 15%; */
   }
 
-  a#register {
-    /* order: 3; */
-    /* width: auto; */
-  }
 
   main {
     display: flex;
@@ -576,7 +592,6 @@ li {
 
   .popular h1 {
     margin-top: 10px;
-
   }
 
   section.Activities {
@@ -584,11 +599,11 @@ li {
     margin-top: 40px;
     display: grid;
     grid-template-areas:
-        "titre titre titre titre"
-        "activite1 activite2 activite4 activite5"
-        "activite1 activite2 activite4 ."
-        "activite1 . activite4 activite6"
-        "activite1 activite3 activite4 activite6";
+      "titre titre titre titre"
+      "activite1 activite2 activite4 activite5"
+      "activite1 activite2 activite4 ."
+      "activite1 . activite4 activite6"
+      "activite1 activite3 activite4 activite6";
     grid-template-columns: 22% 22% 22% 22%;
     grid-template-rows: 3rem 9rem 3rem 3rem 9rem;
     column-gap: 3%;
@@ -641,6 +656,10 @@ li {
     grid-area: activite6;
   }
 
+  section.Activities img {
+    height: calc(100% - 1.9rem)
+  }
+
  footer {
     display: flex;
     justify-content: space-around;
@@ -648,83 +667,208 @@ li {
   }
 }
 
-
-@media screen AND (min-width: 1440px) {
-
-  body >* {
-      width: 99%;
-  }
-
-  nav a{
-      width: 100%;
-      font-size: 25px;        
-  }
-
-  a#logo {
-      height: 60px;
-  }
-
-  a#rooms {
-      width: 25%;
-  }
-
-  a#activities {
-      width: 25%;
-  }
-
-  a#register {
-      width: 25%;
-      display: flex;
-      justify-content: center;
-  }
-
-  body {
-      /* margin: 0; */
-      /* width: 100%; */
-  }
+@media screen AND (min-width: 1280px) {
 
   main {
-      max-width: 1440px;
-      margin: 0;
-
+    max-width: 1280px; 
+  }
+    
+  .Afficher {
+    margin-top: -10px; 
+  }
+    
+  .rooms article {
+    height: 185px;
   }
 
-  section.rooms {
-      width: 60%;
-  }
-
-  section.popular {
-      width: 40%;
-  }
-
-  .popular article {
-      width: 92%;
-      height: 165px;
-  }
-
-  .popular img {
-      height: 95%
+  .rooms img {
+    width: 350px;
   }
 
   .popular h1 {
-      margin-bottom: 50px;
-      margin-top: 15px;
+    margin-top: 15px
+  }
+
+  .popular article {
+    width: 90%;
+    height: 153px;
+    margin: 11px;
+  }
+
+  .popular img {
+    height: 149px;
+  }
+}
+
+@media screen AND (min-width: 1280px) {
+
+  nav a {
+    display: flex;
+    justify-content: space-around;        
+  }
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+    
+  a#logo {
+    order: 1;
+    width: 100%;
+    margin: auto;
+  }
+    
+  a#activities {
+    order: 3;
+    display: flex;
+    justify-content: center;
+    border-bottom: none;
+  }
+
+  a#rooms {
+    order: 2;
+    border-bottom: none;
+  }
+
+  a#register {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    order: 3;
+  }
+}
+
+@media screen AND (min-width: 1440px) {
+
+  body {
+    margin: 0;
+    max-width: 1440px;
+  }
+
+  body >* {
+    width: 99%;
+  }
+
+  nav a{
+    width: 100%;
+    font-size: 25px;        
+  }
+
+  a#logo {
+    height: 60px;
+  }
+
+  a#rooms {
+    width: 25%;
+  }
+
+  a#activities {
+    width: 25%;
+  }
+
+  a#register {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+  }
+
+  div#search {
+    font-size: 28px;
+  }
+
+  input.champ {
+    font-size: 25px;
+  }
+
+  button.button {
+    font-size: 25px;
+    width: 10rem;
+    height: 2.8rem;
+  }
+    
+  div#Filtres {
+    font-size: 24px;
+  }
+
+  #Filtres div {
+    padding: 1.5px;
+    padding-right: 20px;
+  } 
+    
+  #Filtres div::before {
+    width: 3rem;
+    height: 3rem;
+  }
+    
+  i.fas.fa-info {
+    width: 2.5rem;
+  }
+    
+  main {
+    max-width: 1440px;
+    margin: 0;
+  }
+
+  section.rooms {
+    width: 60%;
+  }
+
+  section.popular {
+    width: 40%;
+  }
+
+  .rooms article {
+    height: 220px;
+  }
+
+  .rooms h3 {
+    font-size: 21px;
+  }
+
+  .rooms p {
+    font-size: 20px;
+  }
+
+  .popular article {
+    width: 92%;
+    height: 168px;
+  }
+
+  .popular img {
+    height: 163px;
+  }
+
+  .popular h1 {
+    margin-bottom: 34px;
+    margin-top: 16px;
+  }
+
+  .popular h3 {
+    font-size: 21px;
+  }
+
+  .popular p {
+    font-size: 20px;
   }
 
   h1 {
-      font-size: 30px;
+    font-size: 30px;
   }
 
   h2 {
-      font-size: 25px;
+    font-size: 25px;
   }
 
   h3 {
-      font-size: 20px;
+    font-size: 20px;
   }
 
   p {
-      font-size: 20px;
+    font-size: 25px;
+  }
+
+  section.Activities img {
+    height: calc(100% - 1.9rem)
   }
 
   footer {
