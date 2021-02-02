@@ -32,8 +32,13 @@ h1 {
 }
 
 h2 {
-  font-size: 17px;
   font-weight: bold;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  width: 95%;
 }
 
 h3 {
@@ -58,6 +63,9 @@ img {
   border-radius: 1rem 1rem 0 0;
 }
 
+article :hover {
+    cursor: pointer;
+}
 
 /* HEADER */
 
@@ -66,7 +74,7 @@ header {
 }
 
 #logo {
-  background-image: url("../images/logo/Reservia@3x.png");
+  background-image: url(images/logo/Reservia@3x.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: 5px;
@@ -185,6 +193,8 @@ div#Filtres {
   width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
+    font-size: 17px;
+  font-weight: bold;
 }
 
 #Filtres div {
@@ -323,6 +333,10 @@ h3.Afficher {
     margin-bottom: 25px;
 }
 
+.Afficher :hover {
+  cursor: pointer;
+}
+
 
 /* SECTION POPULAR */
 
@@ -345,12 +359,12 @@ section.popular {
   align-self: center;
 }
 
-.popular h1:after {
+.popular h2:after {
   content: "\f201";
   font-family: 'Font Awesome 5 Free';
 }
 
-.popular h1 {
+.popular h2 {
   display: flex;
   justify-content: space-between;
   margin-top: 5px;
@@ -565,7 +579,7 @@ li {
     align-items: center;
   }
 
-  .rooms h1 {
+  .rooms h2 {
     padding-top: 1px
   }
 
@@ -587,7 +601,7 @@ li {
     height: 110px
   }
 
-  .popular h1 {
+  .popular h2 {
     margin-top: 10px;
   }
 
@@ -627,7 +641,7 @@ li {
       height: calc(100% - 3rem);
   }
 
-  .Activities h1 {
+  .Activities h2 {
     grid-area: titre;
     margin: 0;
     padding: 0;
@@ -659,8 +673,11 @@ li {
 
  footer {
     display: flex;
-    justify-content: space-between;
     width: 100%;
+  }
+
+  footer h3 {
+    margin-right: 240px;    
   }
 }
 
@@ -682,7 +699,7 @@ li {
     width: 350px;
   }
 
-  .popular h1 {
+  .popular h2 {
     margin-top: 15px
   }
 
@@ -695,6 +712,16 @@ li {
   .popular img {
     height: 149px;
   }
+  
+  footer h3 {
+    margin-right: 280px;
+    padding-left: 20px;
+  }
+
+  footer ul {
+    padding-left: 20px;
+  }
+
 }
 
 @media screen AND (min-width: 1280px) {
@@ -768,7 +795,11 @@ li {
     display: flex;
     justify-content: center;
   }
-
+  
+  #search {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
   div#search {
     font-size: 28px;
   }
@@ -782,7 +813,11 @@ li {
     width: 10rem;
     height: 2.8rem;
   }
-    
+  
+  #Filtres h2 {
+    font-size: 25px;
+  }
+  
   div#Filtres {
     font-size: 24px;
   }
@@ -803,7 +838,6 @@ li {
     
   main {
     max-width: 1440px;
-    margin: 0;
   }
 
   section.rooms {
@@ -835,7 +869,7 @@ li {
     height: 163px;
   }
 
-  .popular h1 {
+  .popular h2 {
     margin-bottom: 34px;
     margin-top: 16px;
   }
@@ -850,6 +884,7 @@ li {
 
   h1 {
     font-size: 30px;
+    margin-bottom: 30px;
   }
 
   h2 {
@@ -870,5 +905,14 @@ li {
 
   footer {
     width: 100%;
+  }
+  
+  footer ul {
+    padding-left: 20px;
+  }
+
+  footer h3 {
+    margin-right: 295px;
+    padding-left: 20px;
   }
 }
