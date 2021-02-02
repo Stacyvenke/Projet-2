@@ -168,20 +168,6 @@ button.button::after {
   color: white;
 }
 
-@media screen AND (min-width: 768px) {
-  button.button::after {
-    content: "Rechercher";
-    font-family: "Raleway";
-  }
-
-  button.button {
-    width: 5rem;
-    color: #0065fc;
-    border: none;
-    border-radius: 0px 10px 10px 0px;
-  }
-}
-
 
 /* SECTION FILTRES */
 
@@ -267,7 +253,6 @@ main {
   flex-direction: column-reverse;
   width: 100%;
 }
-
 
 .star {
   margin-left: 10px;
@@ -445,6 +430,17 @@ li {
 /* MEDIA QUERIES */
 
 @media screen AND (min-width: 768px) {
+  button.button::after {
+    content: "Rechercher";
+    font-family: "Raleway";
+  }
+
+  button.button {
+    width: 5rem;
+    color: #0065fc;
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+  }
 
   .rooms img {
     width: 100%;
@@ -662,7 +658,7 @@ li {
 
  footer {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
   }
 }
