@@ -542,7 +542,7 @@ li {
     display: flex;
     justify-content: space-between;
     flex-direction: initial;
-    max-width: 1024px;
+    max-width: 1400px;
     margin: auto;
     align-items: baseline;
     padding-right: 1rem;
@@ -562,7 +562,7 @@ li {
     align-items: center;
     border-radius: 2rem;
     width: 60%;
-    height: 50vw;
+    height: 500px;
   }
 
   .rooms article {
@@ -587,9 +587,12 @@ li {
   section.popular {
     width: 40%;
     display: flex;
+    /* flex-wrap: inherit; */
     flex-direction: column;
     border-radius: 2rem;
     margin-left: 20px;
+    /* height: 500px; */
+    padding-bottom: 15px;
   }
 
   .popular article {
@@ -690,7 +693,11 @@ li {
   .Afficher {
     margin-top: -10px; 
   }
-    
+  
+  section.rooms {
+    height: 625px;
+  }
+  
   .rooms article {
     height: 185px;
   }
@@ -842,6 +849,7 @@ li {
 
   section.rooms {
     width: 60%;
+    height: 700px;
   }
 
   section.popular {
